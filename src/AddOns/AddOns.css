@@ -1,0 +1,35 @@
+.add-ons {
+  background-color: white;
+  border: 1px solid var(--marine-blue);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  margin-top: 2rem;
+  padding: 1.5rem 1rem 1.5rem 2.5rem;
+}
+.add-ons input {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: none;
+  outline: none;
+}
+.add-ons-text-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.add-ons-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.add-ons-text h3 {
+  font-size: 1.5rem;
+  color: var(--marine-blue);
+}
+.add-ons p {
+  font-size: 1.3rem;
+  color: var(--faded-grey);
+}

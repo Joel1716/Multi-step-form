@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --faded-grey: hsl(231, 11%, 63%);
+  --marine-blue: hsl(213, 96%, 18%);
+  --light-grey: hsl(217, 100%, 97%);
+  --light-blue: hsl(231, 100%, 99%);
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+.container {
+  width: 80%;
+  max-width: 80rem;
+  height: 47rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 0 2px 2px black;
+}
+.steps-container {
+  width: 35%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 10px;
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.second-section {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 5rem 0 0;
+}
+.number-and-step {
+  display: flex;
+  gap: 1rem;
+  color: white;
+}
+.number {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+.steps p {
+  color: var(--faded-grey);
+  margin-bottom: 0.2rem;
+}
+.second-section .section-text {
+  color: var(--faded-grey);
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+}
+.input-label-container,
+.plan-container {
+  margin-top: 3rem;
+}
+.switch-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--marine-blue);
+  margin: auto 0 0;
+  margin-bottom: 2rem;
+}
+.switch-section a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--faded-grey);
+}
+.switch-section button {
+  padding: 0.9rem 2rem;
+  background-color: var(--marine-blue);
+  color: white;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}

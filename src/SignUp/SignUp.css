@@ -1,0 +1,34 @@
+h1 {
+  color: var(--marine-blue);
+  font-size: 2.4rem;
+}
+.input-label-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+label {
+  display: block;
+  color: var(--marine-blue);
+  font-size: 1.3rem;
+}
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 7px;
+  border: 1px solid var(--light-grey);
+  outline: none;
+  /* box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08); */
+}
+input:focus {
+  outline: 1px solid var(--marine-blue);
+}
+input::placeholder {
+  font-size: 1.2rem;
+  color: var(--faded-grey);
+}

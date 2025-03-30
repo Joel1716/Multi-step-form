@@ -1,0 +1,47 @@
+.each-section-pricing {
+  background-color: var(--light-blue);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+}
+.plan-chosen-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.plan-chosen a {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 1.4rem;
+  color: blue;
+}
+.plan-chosen h3,
+.plan-chosen-price p {
+  font-size: 1.5rem;
+  color: var(--marine-blue);
+}
+.service-price,
+.storage-price,
+.total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.service-price h4,
+.storage-price h4,
+.total-price h4 {
+  color: var(--faded-grey);
+  font-size: 1.3rem;
+}
+.service-price p,
+.storage-price p,
+.total-price p {
+  color: #333;
+  font-size: 1.4rem;
+}
+.total-price {
+  margin: 0 2rem;
+}

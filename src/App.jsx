@@ -75,75 +75,75 @@ function App() {
     }
   }
   return (
-    <div className="container">
-      <div className="steps-container">
-        <div className="number-and-step">
-          <div
-            className="number"
-            style={
-              num === 0
-                ? { backgroundColor: "lightgreen" }
-                : { backgroundColor: "transparent" }
-            }
-          >
-            1
+    <div className="overall-container">
+      <div className="container">
+        <div className="steps-container">
+          <div className="number-and-step">
+            <div
+              className="number"
+              style={
+                num === 0
+                  ? { backgroundColor: "lightgreen" }
+                  : { backgroundColor: "transparent" }
+              }
+            >
+              1
+            </div>
+            <div className="steps">
+              <p>STEP 1</p>
+              <h2>YOUR INFO</h2>
+            </div>
           </div>
-          <div className="steps">
-            <p>STEP 1</p>
-            <h2>YOUR INFO</h2>
+          <div className="number-and-step">
+            <div
+              className="number"
+              style={
+                num === 1
+                  ? { backgroundColor: "lightgreen" }
+                  : { backgroundColor: "transparent" }
+              }
+            >
+              2
+            </div>
+            <div className="steps">
+              <p>STEP 2</p>
+              <h2>SELECT PLAN</h2>
+            </div>
+          </div>
+          <div className="number-and-step">
+            <div
+              className="number"
+              style={
+                num === 2
+                  ? { backgroundColor: "lightgreen" }
+                  : { backgroundColor: "transparent" }
+              }
+            >
+              3
+            </div>
+            <div className="steps">
+              <p>STEP 3</p>
+              <h2>ADD-ONS</h2>
+            </div>
+          </div>
+          <div className="number-and-step">
+            <div
+              className="number"
+              style={
+                num === 3
+                  ? { backgroundColor: "lightgreen" }
+                  : { backgroundColor: "transparent" }
+              }
+            >
+              4
+            </div>
+            <div className="steps">
+              <p>STEP 4</p>
+              <h2>SUMMARY</h2>
+            </div>
           </div>
         </div>
-        <div className="number-and-step">
-          <div
-            className="number"
-            style={
-              num === 1
-                ? { backgroundColor: "lightgreen" }
-                : { backgroundColor: "transparent" }
-            }
-          >
-            2
-          </div>
-          <div className="steps">
-            <p>STEP 2</p>
-            <h2>SELECT PLAN</h2>
-          </div>
-        </div>
-        <div className="number-and-step">
-          <div
-            className="number"
-            style={
-              num === 2
-                ? { backgroundColor: "lightgreen" }
-                : { backgroundColor: "transparent" }
-            }
-          >
-            3
-          </div>
-          <div className="steps">
-            <p>STEP 3</p>
-            <h2>ADD-ONS</h2>
-          </div>
-        </div>
-        <div className="number-and-step">
-          <div
-            className="number"
-            style={
-              num === 3
-                ? { backgroundColor: "lightgreen" }
-                : { backgroundColor: "transparent" }
-            }
-          >
-            4
-          </div>
-          <div className="steps">
-            <p>STEP 4</p>
-            <h2>SUMMARY</h2>
-          </div>
-        </div>
-      </div>
-      <div className="second-section">
-        {sections()}
+        <div className="second-section">{sections()}</div>
         <div className="switch-section">
           <a href="#" onClick={handlePreviousSection}>
             Go Back

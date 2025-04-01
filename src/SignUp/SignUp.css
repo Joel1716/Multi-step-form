@@ -5,7 +5,7 @@ h1 {
 .input-label-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 .input-label {
   display: flex;
@@ -23,6 +23,7 @@ input {
   border-radius: 7px;
   border: 1px solid var(--light-grey);
   outline: none;
+  font-size: 1.4rem;
   /* box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08); */
 }
 input:focus {

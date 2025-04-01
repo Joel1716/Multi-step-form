@@ -11,12 +11,14 @@ function PlanOptions({
   datePeriod,
   setSelectedPlan,
   selectedPlan,
+  money,
 }) {
   const handlePlanClick = () => {
     setSelectedPlan({
       title: title,
       moneyPeriod: moneyPeriod,
       datePeriod: datePeriod,
+      money: money,
     });
   };
   useEffect(() => {
@@ -53,24 +55,24 @@ function Plan({ setSelectedPlan, selectedPlan, setClicked, clicked }) {
       title: "Arcade",
       month: "Monthly",
       year: "Yearly",
-      monthlyPeriod: "$9/mo",
-      yearlyPeriod: "$90/yr",
+      monthlyPeriod: 9,
+      yearlyPeriod: 90,
     },
     {
       img: advancedImg,
       title: "Advanced",
       month: "Monthly",
       year: "Yearly",
-      monthlyPeriod: "$12/mo",
-      yearlyPeriod: "$120/yr",
+      monthlyPeriod: 12,
+      yearlyPeriod: 120,
     },
     {
       img: proImg,
       title: "Pro",
       month: "Monthly",
       year: "Yearly",
-      monthlyPeriod: "$15/mo",
-      yearlyPeriod: "$150/yr",
+      monthlyPeriod: 15,
+      yearlyPeriod: 150,
     },
   ];
   useEffect(() => {
@@ -109,7 +111,12 @@ function Plan({ setSelectedPlan, selectedPlan, setClicked, clicked }) {
             key={option.title}
             img={option.img}
             title={option.title}
-            moneyPeriod={clicked ? option.yearlyPeriod : option.monthlyPeriod}
+            moneyPeriod={
+              clicked
+                ? `$${option.yearlyPeriod}/yr`
+                : `$${option.monthlyPeriod}/mo`
+            }
+            money={clicked ? option.yearlyPeriod : option.monthlyPeriod}
             datePeriod={clicked ? option.year : option.month}
             setSelectedPlan={setSelectedPlan}
             selectedPlan={selectedPlan}

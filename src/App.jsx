@@ -6,12 +6,21 @@ import AddOns from "./AddOns/AddOns.jsx";
 import Checkout from "./Checkout/Checkout.jsx";
 
 function App() {
+  const [names, setNames] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [error, setError] = useState("");
   const [num, setNum] = useState(0);
   const [selectedPlan, setSelectedPlan] = useState({});
   const [clicked, setClicked] = useState(false);
   const [addOnPlan, setAddOnPlan] = useState([]);
   function handleNextSection() {
-    if (num === num + 1) {
+    if (error !== "No error") {
+    } else if (num === 1 && selectedPlan.title === undefined) {
+      alert("Please Pick an Option");
+    } else if (num === 2 && addOnPlan.length === 0) {
+      alert("Please Pick an AddOn");
+    } else if (num === 3) {
       return;
     } else {
       setNum((n) => n + 1);
@@ -26,7 +35,18 @@ function App() {
   }
   function sections() {
     if (num === 0) {
-      return <SignUp />;
+      return (
+        <SignUp
+          names={names}
+          email={email}
+          number={number}
+          error={error}
+          setError={setError}
+          setNames={setNames}
+          setEmail={setEmail}
+          setNumber={setNumber}
+        />
+      );
     } else if (num === 1) {
       return (
         <Plan
@@ -45,37 +65,77 @@ function App() {
         />
       );
     } else if (num === 3) {
-      return <Checkout addOnPlan={addOnPlan} selectedPlan={selectedPlan} />;
-    } else {
-      return;
+      return (
+        <Checkout
+          addOnPlan={addOnPlan}
+          selectedPlan={selectedPlan}
+          clicked={clicked}
+        />
+      );
     }
   }
   return (
     <div className="container">
       <div className="steps-container">
         <div className="number-and-step">
-          <div className="number">1</div>
+          <div
+            className="number"
+            style={
+              num === 0
+                ? { backgroundColor: "lightgreen" }
+                : { backgroundColor: "transparent" }
+            }
+          >
+            1
+          </div>
           <div className="steps">
             <p>STEP 1</p>
             <h2>YOUR INFO</h2>
           </div>
         </div>
         <div className="number-and-step">
-          <div className="number">2</div>
+          <div
+            className="number"
+            style={
+              num === 1
+                ? { backgroundColor: "lightgreen" }
+                : { backgroundColor: "transparent" }
+            }
+          >
+            2
+          </div>
           <div className="steps">
             <p>STEP 2</p>
             <h2>SELECT PLAN</h2>
           </div>
         </div>
         <div className="number-and-step">
-          <div className="number">3</div>
+          <div
+            className="number"
+            style={
+              num === 2
+                ? { backgroundColor: "lightgreen" }
+                : { backgroundColor: "transparent" }
+            }
+          >
+            3
+          </div>
           <div className="steps">
             <p>STEP 3</p>
             <h2>ADD-ONS</h2>
           </div>
         </div>
         <div className="number-and-step">
-          <div className="number">4</div>
+          <div
+            className="number"
+            style={
+              num === 3
+                ? { backgroundColor: "lightgreen" }
+                : { backgroundColor: "transparent" }
+            }
+          >
+            4
+          </div>
           <div className="steps">
             <p>STEP 4</p>
             <h2>SUMMARY</h2>

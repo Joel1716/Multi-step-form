@@ -1,13 +1,13 @@
 import "./Checkout.css";
 function Checkout({
   addOnPlan,
-  selectedPlan: { title, moneyPeriod, datePeriod },
+  selectedPlan: { title, moneyPeriod, datePeriod, money },
+  clicked,
 }) {
-  // let totalAddOnPrice = 0;
-  // addOnPlan.forEach((addOn) => {
-  //   totalAddOnPrice += addOn.price;
-  // });
-  // console.log(totalAddOnPrice);
+  let price = 0;
+  addOnPlan.forEach((eachPrice) => {
+    price += eachPrice.price;
+  });
   return (
     <>
       <h1>Finishing up</h1>
@@ -27,7 +27,7 @@ function Checkout({
           </div>
           <hr />
           {addOnPlan.map((addOn) => (
-            <div className="service-price">
+            <div key={addOn.title} className="service-price">
               <h4>{addOn.title}</h4>
               <p>{addOn.priceString}</p>
             </div>
@@ -35,7 +35,7 @@ function Checkout({
         </div>
         <div className="total-price">
           <h4>Total (per month)</h4>
-          <p>12/mo</p>
+          <p>{clicked ? `$${money + price}/yr` : `$${money + price}/mo`}</p>
         </div>
       </main>
     </>

@@ -25,20 +25,6 @@ function AddOnsOption({
       console.log("Hey");
     }
   }
-  // useEffect(() => {
-  //   addOnPlan.forEach((addOn) => {
-  //     if (addOn.title === title) {
-  //       setAddOnPlan([
-  //         {
-  //           title,
-  //           priceString,
-  //           price,
-  //           clicked: title,
-  //         },
-  //       ]);
-  //     }
-  //   });
-  // }, [priceString]);
   return (
     <div className="add-ons">
       <input
@@ -78,6 +64,25 @@ function AddOns({ addOnPlan, setAddOnPlan, clicked }) {
       yearPrice: 20,
     },
   ];
+  useEffect(() => {
+    setAddOnPlan((prevAddOns) =>
+      prevAddOns.map((addOn) => {
+        // Find the matching option to get the updated prices
+        const option = addOnsOptions.find((opt) => opt.title === addOn.title);
+
+        if (option) {
+          return {
+            ...addOn,
+            price: clicked ? option.yearPrice : option.monthPrice,
+            priceString: clicked
+              ? `+$${option.yearPrice}/yr`
+              : `+$${option.monthPrice}/mo`,
+          };
+        }
+        return addOn;
+      })
+    );
+  }, [clicked]);
   return (
     <>
       <h1>Pick add-ons</h1>

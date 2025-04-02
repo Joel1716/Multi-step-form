@@ -12,9 +12,6 @@
   html {
     font-size: 43.75%;
   }
-  .overall-container {
-    position: relative;
-  }
   .container {
     max-width: 100%;
     width: 100%;
@@ -27,20 +24,21 @@
     width: 100%;
     border-radius: 0px;
     flex-direction: row;
-    height: 30%;
+    height: 20rem;
     align-items: start;
     justify-content: center;
     padding: 1rem;
   }
   .second-section {
     position: absolute;
-    top: 33%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -33%);
+    transform: translate(-50%, 0);
     width: 80%;
     background-color: white;
-    padding: 3rem 2.5rem;
+    padding: 4rem 2.5rem 10rem 2.5rem;
     border-radius: 10px;
+    margin-top: 12rem;
   }
   .number {
     margin-top: 2rem;

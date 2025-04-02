@@ -4,6 +4,7 @@ import SignUp from "./SignUp/SignUp.jsx";
 import Plan from "./Plan/Plan.jsx";
 import AddOns from "./AddOns/AddOns.jsx";
 import Checkout from "./Checkout/Checkout.jsx";
+import Thankyou from "./Thankyou/Thankyou.jsx";
 
 function App() {
   const [names, setNames] = useState("");
@@ -14,13 +15,14 @@ function App() {
   const [selectedPlan, setSelectedPlan] = useState({});
   const [clicked, setClicked] = useState(false);
   const [addOnPlan, setAddOnPlan] = useState([]);
+
   function handleNextSection() {
     if (error !== "No error") {
     } else if (num === 1 && selectedPlan.title === undefined) {
       alert("Please Pick an Option");
     } else if (num === 2 && addOnPlan.length === 0) {
       alert("Please Pick an AddOn");
-    } else if (num === 3) {
+    } else if (num === 4) {
       return;
     } else {
       setNum((n) => n + 1);
@@ -70,8 +72,11 @@ function App() {
           addOnPlan={addOnPlan}
           selectedPlan={selectedPlan}
           clicked={clicked}
+          setNum={setNum}
         />
       );
+    } else if (num === 4) {
+      return <Thankyou />;
     }
   }
   return (
@@ -130,7 +135,7 @@ function App() {
             <div
               className="number"
               style={
-                num === 3
+                num === 3 || num === 4
                   ? { backgroundColor: "lightgreen" }
                   : { backgroundColor: "transparent" }
               }
@@ -144,14 +149,16 @@ function App() {
           </div>
         </div>
         <div className="second-section">{sections()}</div>
-        <div className="switch-section">
-          <a href="#" onClick={handlePreviousSection}>
-            Go Back
-          </a>
-          <button id={num} onClick={handleNextSection}>
-            Next Step
-          </button>
-        </div>
+        {num !== 4 && (
+          <div className="switch-section">
+            <a href="#" onClick={handlePreviousSection}>
+              Go Back
+            </a>
+            <button id={num} onClick={handleNextSection}>
+              Next Step
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

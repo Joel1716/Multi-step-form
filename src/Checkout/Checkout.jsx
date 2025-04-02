@@ -3,6 +3,7 @@ function Checkout({
   addOnPlan,
   selectedPlan: { title, moneyPeriod, datePeriod, money },
   clicked,
+  setNum,
 }) {
   let price = 0;
   addOnPlan.forEach((eachPrice) => {
@@ -21,7 +22,9 @@ function Checkout({
               <h3>
                 {title} ({datePeriod})
               </h3>
-              <a href="#">Change</a>
+              <a href="#" onClick={() => setNum(0)}>
+                Change
+              </a>
             </div>
             <p>{moneyPeriod}</p>
           </div>
@@ -34,7 +37,7 @@ function Checkout({
           ))}
         </div>
         <div className="total-price">
-          <h4>Total (per month)</h4>
+          <h4>Total {clicked ? "(per year)" : "(per month)"}</h4>
           <p>{clicked ? `$${money + price}/yr` : `$${money + price}/mo`}</p>
         </div>
       </main>

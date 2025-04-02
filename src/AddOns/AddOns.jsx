@@ -26,7 +26,16 @@ function AddOnsOption({
     }
   }
   return (
-    <div className="add-ons">
+    <div
+      className="add-ons"
+      style={
+        addOnPlan.some((addOn) => addOn.clicked === title)
+          ? {
+              backgroundColor: "hsl(231, 100%, 99%)",
+            }
+          : { backgroundColor: "transparent" }
+      }
+    >
       <input
         className="addOn-input"
         type="checkbox"
